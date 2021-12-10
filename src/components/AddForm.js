@@ -11,7 +11,7 @@ const AddForm = (props) => {
     });
 
     //remove when error state is added
-    const errorMessage = state.errorMessage;
+    // const errorMessage = state.errorMessage;
 
     const handleChange = e => {
         setState({
@@ -59,7 +59,6 @@ const AddForm = (props) => {
 }
 
 export default connect(null,{addSmurfs,errorMessage})(AddForm);
-
 
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
