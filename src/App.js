@@ -31,7 +31,3 @@ class App extends Component {
 
 
 export default connect(null) (App);
-
-//Task List:
-//1. Connect the fetchSmurfs actions to the App component.
-//2. Call the fetchSmurfs action when the component mounts.

@@ -60,6 +60,7 @@ const AddForm = (props) => {
 
 export default connect(null,{addSmurfs,errorMessage})(AddForm);
 
+
 //Task List:
 //1. Connect the errorMessage, setError and addSmurf actions to the AddForm component.
 //2. Replace all instances of the errorMessage static variable with your error message state value. 
