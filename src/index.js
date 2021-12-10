@@ -1,34 +1,26 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { createStore,applyMiddleware } from 'redux';
-import {Provider} from 'react-redux';
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 import "./index.css";
 import App from "./App";
+import reducer from "../src/reducers";
 
-//MiddleWare
-import logger from 'redux-logger';
-import thunk from 'redux-thunk';
+const store = createStore(reducer, applyMiddleware(thunk));
 
-//Reducer
-import reducer from './reducers';
-
-//Store
-const store = createStore(reducer,applyMiddleware(thunk,logger));
-
-
-const { worker } = require('./mocks/browser');
+const { worker } = require("./mocks/browser");
 worker.start();
 
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
-    <Provider store={store}>
+  <Provider store={store}>
     <App />
-</Provider>,
-rootElement
+  </Provider>,
+  rootElement
 );
-
 //Task List:
 //1. Add in all necessary components and libary methods.
 //2. Create a store that includes thunk and logger middleware support.
